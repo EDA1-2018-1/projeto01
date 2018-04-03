@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 4
+#define MAX 10
 
 void fneuronio(double *, double *, double, int *);
 
@@ -15,11 +15,11 @@ int main() {
   double ENTRADAS[MAX], PESOS[MAX];
   double T;
   int i, *resultado;
-  printf("Digite 4 números de entrada: \n");
+  printf("Digite 10 números de entrada: \n");
   for(i = 0; i < MAX; i++){
     scanf("%lf", &ENTRADAS[i]);
   }
-  printf("Digite 4 números de pesos: \n");
+  printf("Digite 10 números de pesos: \n");
   for(i = 0; i < MAX; i++){
     scanf("%lf", &PESOS[i]);
   }
