@@ -23,7 +23,7 @@ int main() {
     scanf("%lf", &PESOS[i]);
   }
   printf("Digite o valor do limiar T: ");
-  scanf("%lf", T);
+  scanf("%lf", &T);
   fneuronio(ENTRADAS, PESOS, T, SOMAP, MAX, resultado);
 
   printf("VAI TOMAR NO CU %lf %d", SOMAP, *resultado);
