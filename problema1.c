@@ -7,26 +7,29 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 10
+#define MAX 4
 
 void fneuronio(double *, double *, double, double , int, int *);
 
 int main() {
-  double ENTRADAS[MAX], PESOS[MAX], T, SOMAP = 0;
+  double ENTRADAS[MAX], PESOS[MAX], SOMAP = 0;
+  double T;
   int i, *resultado;
-  printf("Digite 10 números de entrada: ");
+  printf("Digite 4 números de entrada: \n");
   for(i = 0; i < MAX; i++){
     scanf("%lf", &ENTRADAS[i]);
   }
-  printf("Digite 10 números de pesos: ");
+  printf("Digite 4 números de pesos: \n");
   for(i = 0; i < MAX; i++){
     scanf("%lf", &PESOS[i]);
   }
   printf("Digite o valor do limiar T: ");
-  scanf("%lf", T);
+  scanf("%lf",&T);
+
+
   fneuronio(ENTRADAS, PESOS, T, SOMAP, MAX, resultado);
 
-  printf("VAI TOMAR NO CU %lf %d", SOMAP, *resultado);
+  printf("SOMAP %.2lf \n RESULTADO %d \n", SOMAP, resultado);
   return 0;
 }
 
@@ -37,9 +40,9 @@ void fneuronio(double *ENTRADAS, double *PESOS, double T, double SOMAP, int N, i
     printf("%lf", SOMAP);
   }
   if(SOMAP < T){
-    *resultado = 0;
+    resultado = 0;
   }
   else{
-    *resultado = 1;
+    resultado = 1;
   }
 }
