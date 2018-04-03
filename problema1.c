@@ -9,9 +9,7 @@
 #include <stdlib.h>
 #define MAX 10
 
-void fneuronio(double *, double *, double, double , int, int *);
-
-int main() {
+int main(int argc, char *argv[]) {
   double ENTRADAS[MAX], PESOS[MAX], T, SOMAP = 0;
   int i, *resultado;
   printf("Digite 10 números de entrada: ");
@@ -24,7 +22,11 @@ int main() {
   }
   printf("Digite o valor do limiar T: ");
   scanf("%lf", &T);
+<<<<<<< HEAD
   fneuronio(ENTRADAS, PESOS, T, SOMAP, MAX, resultado);
+=======
+  fneuronio(ENTRADAS,   gitPESOS, T, SOMAP, MAX, resultado);
+>>>>>>> e9d26ff8deb46dc2a9a363a4d6138100b28164bb
 
   printf("VAI TOMAR NO CU %lf %d", SOMAP, *resultado);
   return 0;
