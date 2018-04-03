@@ -29,10 +29,10 @@ int main() {
 
   fneuronio(ENTRADAS, PESOS, T, &resultado);
 
-  if(resultado == 0) {
+  if(resultado  = 0) {
     printf("\n Neurônio inibido! \n\n");
   }
-  else if(resultado == 1){
+  else{
     printf("\n Neurônio ativado! \n\n");
   }
   return 0;
