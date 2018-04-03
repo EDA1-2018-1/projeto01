@@ -27,7 +27,7 @@ int main() {
   scanf("%lf",&T);
 
 
-  fneuronio(ENTRADAS, PESOS, T, resultado);
+  fneuronio(ENTRADAS, PESOS, T, &resultado);
 
   printf("RESULTADO %d \n", resultado);
   return 0;
@@ -37,14 +37,12 @@ void fneuronio(double *ENTRADAS, double *PESOS, double T, int *resultado){
   int k;
   double SOMAP=0;
   for(k = 0 ; k < MAX ; k++){
-    SOMAP+=ENTRADAS[k]*PESOS[k];
-    printf("%lf \n", SOMAP);
-    printf("\n");
+    SOMAP += *(ENTRADAS+k) * *(PESOS + k);
   }
   if(SOMAP < T){
-    resultado = 0;
+    *resultado = 0;
   }
-  else if(SOMAP > T){
-    resultado = 1;
+  else{
+    *resultado = 1;
   }
 }
