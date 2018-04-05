@@ -19,6 +19,7 @@ int main() {
 double NOTAS[MAX];
 int i, j, APR[MAX];
 int *aprovados, *reprovados;
+double *percentAprovados, *percentReprovados;
 
 printf("Digite a nota de 10 alunos: \n");
 for(i = 0; i < MAX; i++){
@@ -28,7 +29,7 @@ for(i = 0; i < MAX; i++){
 
 recebe_notas(NOTAS, MAX, APR);
 conta_notas(APR, MAX, &aprovados, &reprovados);
-
+percent_aprov();
 printf("Aprovados: %d\n", aprovados);
 printf("Reprovados: %d\n", reprovados);
 
@@ -50,16 +51,22 @@ void recebe_notas (double *NOTAS, int Num, int *APR){
 }
 
 void conta_notas (int *APR, int Num, int *aprovados, int *reprovados){
-  int j = 0, contaprovados = 0, contreprovados = 0;
+  int j = 0, contAprovados = 0, contReprovados = 0;
 
   for(j = 0; j < Num; ++j){
     if (!(APR[j])){
-      contreprovados ++;
+      contReprovados ++;
     }
     else{
-      contaprovados ++;
+      contAprovados ++;
     }
   }
-  *aprovados = contaprovados;
-  *reprovados = contreprovados;
+  *aprovados = contAprovados;
+  *reprovados = contReprovados;
+}
+
+int percent_aprov (int *aprovados, int *reprovados, int *percentAprovados, int *percentReprovados){
+
+
+return ;
 }
