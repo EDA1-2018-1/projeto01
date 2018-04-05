@@ -23,6 +23,18 @@ int *aprovados, *reprovados;
 printf("Digite a nota de 10 alunos: \n");
 for(i = 0; i < MAX; i++){
   scanf("%lf", &NOTAS[i]);
+  if(NOTAS[i] < 0){
+    while(NOTAS[i] < 0){
+      printf("Valor invalido. Insira novamente: \n");
+      scanf("%lf", &NOTAS[i]);
+    }
+  }
+  else if(NOTAS[i] > 10){
+    while(NOTAS[i] > 10) {
+      printf("Valor invalido. Insira novamente: \n");
+      scanf("%lf", &NOTAS[i]);
+    }
+  }
 }
 
 
