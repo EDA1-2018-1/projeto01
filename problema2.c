@@ -1,5 +1,5 @@
 /*
-  Érico Bandeira -
+  Érico Bandeira - 16/0070287
   Luciana Ribeiro Lins de Albuquerque - 15/0016131
   Max Henrique Barbosa - 16/0047013
 
@@ -10,15 +10,15 @@
 #define MAX 4
 
 //Funções
-void recebe_notas (double *, int *);
-// void conta_notas (int);
+void recebe_notas (double *, int, int *);
+void conta_notas (int *, int, int *, int *);
 
 
 //Main
 int main() {
 
 double NOTAS[MAX];
-int i, j, *APR[MAX], counter=0, contador=0;
+int i, j, APR[MAX];
 int *aprovados, *reprovados;
 
 printf("Digite a nota de 10 alunos: \n");
@@ -27,33 +27,23 @@ for(i = 0; i < MAX; i++){
 }
 
 
-recebe_notas(NOTAS, APR);
-conta_notas(APR, &aprovados, &reprovados);
+recebe_notas(NOTAS, MAX, APR);
+conta_notas(APR, MAX, &aprovados, &reprovados);
 
-for(j=0; j < MAX; j++){
-  if(aprovados) {
-    counter++;
-  }
-  else {
-    contador++;
-  }
+//printf("Aprovados: %d\n", aprovados);
+//printf("Reprovados: %d\n", reprovados);
+
+for (j=0;j<MAX;j++){
+  printf("%d", APR[j]);
 }
-
-printf("Aprovados: %d\n", counter);
-printf("Reprovados: %d\n", contador);
-
-// conta_notas(APR, &aprovados, &reprovados);
-// printf("%d  \n", aprovados);
-// printf("%d  \n", reprovados);
-
   return 0;
 }
 
 //Funções again
-void recebe_notas (double *NOTAS, int *APR){
+void recebe_notas (double *NOTAS, int Num, int *APR){
   int k;
 
-  for(k = 0 ; k < MAX ; k++){
+  for(k = 0 ; k < Num ; k++){
     if(NOTAS[k] >= 6){
       APR[k] = 1;
     }
@@ -63,16 +53,15 @@ void recebe_notas (double *NOTAS, int *APR){
   }
 }
 
-void conta_notas (int *APR, int *aprovados, int *reprovados){
-  //int aprovados, reprovados;
+void conta_notas (int *APR, int Num, int *aprovados, int *reprovados){
   int j = 0;
 
-  for(j = 0; j < MAX; ++j){
-    if (APR[j] = 0){
-      reprovados ++;
+  for(j = 0; j < Num; ++j){
+    if (APR[j] == 0){
+      *reprovados ++;
     }
-    else if(APR[j] = 1){
-      aprovados ++;
+    else if(APR[j] == 1){
+      *aprovados ++;
     }
   }
 }
