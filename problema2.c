@@ -9,10 +9,10 @@
 #include <stdlib.h>
 #define Max 10
 
-void recebe_notas (int *, int);
+void recebe_notas (double *, int);
 
 int main() {
-double NOTAS [MAX];
+double NOTAS[MAX];
 int i, APR[]*;
 
 printf("Digite 10 números de notas: \n");
@@ -23,12 +23,11 @@ for(i = 0; i < MAX; i++){
   return 0;
 }
 
-void recebe_notas (double *NOTAS [MAX], int){
+void recebe_notas (double *NOTAS, int){
   int APR [MAX];
   int k;
 
   for(k = 0 ; k < MAX ; k++){
-
     if(NOTAS[k] >= 6){
       *APR[k] = 1;
     }
