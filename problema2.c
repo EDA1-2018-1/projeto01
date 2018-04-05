@@ -9,10 +9,14 @@
 #include <stdlib.h>
 #define MAX 10
 
+//Funções
 void recebe_notas (double *, int *);
 void conta_notas (int);
 
+
+//Main
 int main() {
+
 double NOTAS[MAX];
 int i, APR[MAX];
 
@@ -24,9 +28,14 @@ for(i = 0; i < MAX; i++){
 recebe_notas(NOTAS, &APR);
 printf("%d  \n", APR);
 
+conta_notas(APR, &aprovados, &reprovados);
+printf("%d  \n", aprovados);
+printf("%d  \n", reprovados);
+
   return 0;
 }
 
+//Funções again
 void recebe_notas (double *NOTAS, int *APR){
   int k;
 
@@ -41,6 +50,16 @@ void recebe_notas (double *NOTAS, int *APR){
   }
 }
 
-void conta_notas (int APR [MAX]){
+void conta_notas (int APR [MAX], int *aprovados, int *reprovados){
+  //int aprovados, reprovados;
+  int j = 0;
 
+  for(j = 0; j < MAX; ++j){
+    if (APR[j] = 0){
+      reprovados ++;
+    }
+    else (APR[j] = 1){
+      aprovados ++;
+    }
+  }
 }
