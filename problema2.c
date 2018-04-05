@@ -40,7 +40,6 @@ void recebe_notas (double *NOTAS, int *APR){
   int k;
 
   for(k = 0 ; k < MAX ; k++){
-
     if(NOTAS[k] >= 6){
       APR[k] = 1;
     }
