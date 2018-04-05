@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #define MAX 10
 
-void fneuronio(double *, double *, double, int, int *);
+void fneuronio(double *, double *, double , int, int *);
 
 int main() {
   double ENTRADAS[MAX], PESOS[MAX];
@@ -22,18 +22,24 @@ int main() {
   printf("Digite 10 números de pesos: \n");
   for(i = 0; i < MAX; i++){
     scanf("%lf", &PESOS[i]);
+    while(PESOS[i] < 0){
+      printf("Valor inválido. Insira novamente:\n");
+      scanf("%lf", &PESOS[i]);
+    }
   }
   printf("Digite o valor do limiar T: ");
-  scanf("%lf",&T);
+  scanf("%lf", &T);
 
   fneuronio(ENTRADAS, PESOS, T, MAX, &resultado);
-  printf("\n%d", resultado);
+
   if(!(resultado)){
     printf("\n Neurônio inibido! \n\n");
   }
   else{
-    printf("\n Neurônio ativado! \n\n");
+    printf("\n Neurônio ativado!");
+    printf("\n\n");
   }
+
   return 0;
 }
 
@@ -43,11 +49,12 @@ void fneuronio(double *ENTRADAS, double *PESOS, double T, int N, int *resultado)
   for(k = 0 ; k < N ; k++){
     SOMAP += (ENTRADAS[k] * PESOS[k]);
   }
-  printf("%lf",SOMAP);
+
   if(SOMAP <= T){
     *resultado = 0;
   }
   else{
     *resultado = 1;
   }
+
 }
