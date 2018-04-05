@@ -46,7 +46,11 @@ printf("Reprovados: %d\n", reprovados);
 printf("Percentagem de Aprovados: %d\% \n", percentAprovados);
 printf("Percentagem Reprovados: %d\% \n", percentReprovados);
 
+if(percent_aprov(&aprovados, &reprovados, &percentAprovados, &percentReprovados))
+  printf("Mais da metade da turma foi aprovada! \n");
+
   return 0;
+
 }
 
 //Funções again
