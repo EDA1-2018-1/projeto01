@@ -2,7 +2,6 @@
   Érico Bandeira - 16/0070287
   Luciana Ribeiro Lins de Albuquerque - 15/0016131
   Max Henrique Barbosa - 16/0047013
-
 */
 
 #include <stdio.h>
@@ -21,7 +20,7 @@ int i, j, APR[MAX];
 int *aprovados, *reprovados;
 double *percentAprovados, *percentReprovados;
 
-printf("Digite a nota de 4 alunos: \n");
+printf("Digite a nota de %d alunos: \n", MAX);
 for(i = 0; i < MAX; i++){
   scanf("%lf", &NOTAS[i]);
   if(NOTAS[i] < 0){
@@ -41,9 +40,11 @@ for(i = 0; i < MAX; i++){
 
 recebe_notas(NOTAS, MAX, APR);
 conta_notas(APR, MAX, &aprovados, &reprovados);
-percent_aprov();
+percent_aprov(&aprovados, &reprovados, &percentAprovados, &percentReprovados);
 printf("Aprovados: %d\n", aprovados);
 printf("Reprovados: %d\n", reprovados);
+printf("Percentagem de Aprovados: %d\% \n", percentAprovados);
+printf("Percentagem Reprovados: %d\% \n", percentReprovados);
 
   return 0;
 }
@@ -78,7 +79,14 @@ void conta_notas (int *APR, int Num, int *aprovados, int *reprovados){
 }
 
 int percent_aprov (int *aprovados, int *reprovados, int *percentAprovados, int *percentReprovados){
+  int aprov, reprov;
+  aprov = *aprovados;
+  reprov = *reprovados;
+  *percentAprovados = ((aprov*100)/MAX);
+  *percentReprovados = ((reprov*100)/MAX);
 
-
-return ;
+  if(*percentAprovados > 50)
+    return 1;
+  else
+   return 0;
 }
