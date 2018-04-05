@@ -7,30 +7,44 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 10
+#define MAX 4
 
 //Funções
 void recebe_notas (double *, int *);
-void conta_notas (int);
+// void conta_notas (int);
 
 
 //Main
 int main() {
 
 double NOTAS[MAX];
-int i, APR[MAX];
+int i, j, *APR[MAX], counter=0, contador=0;
+int *aprovados, *reprovados;
 
 printf("Digite a nota de 10 alunos: \n");
 for(i = 0; i < MAX; i++){
   scanf("%lf", &NOTAS[i]);
 }
 
-recebe_notas(NOTAS, &APR);
-printf("%d  \n", APR);
 
+recebe_notas(NOTAS, APR);
 conta_notas(APR, &aprovados, &reprovados);
-printf("%d  \n", aprovados);
-printf("%d  \n", reprovados);
+
+for(j=0; j < MAX; j++){
+  if(aprovados) {
+    counter++;
+  }
+  else {
+    contador++;
+  }
+}
+
+printf("Aprovados: %d\n", counter);
+printf("Reprovados: %d\n", contador);
+
+// conta_notas(APR, &aprovados, &reprovados);
+// printf("%d  \n", aprovados);
+// printf("%d  \n", reprovados);
 
   return 0;
 }
@@ -49,7 +63,7 @@ void recebe_notas (double *NOTAS, int *APR){
   }
 }
 
-void conta_notas (int APR [MAX], int *aprovados, int *reprovados){
+void conta_notas (int *APR, int *aprovados, int *reprovados){
   //int aprovados, reprovados;
   int j = 0;
 
@@ -57,7 +71,7 @@ void conta_notas (int APR [MAX], int *aprovados, int *reprovados){
     if (APR[j] = 0){
       reprovados ++;
     }
-    else (APR[j] = 1){
+    else if(APR[j] = 1){
       aprovados ++;
     }
   }
