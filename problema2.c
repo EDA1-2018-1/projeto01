@@ -13,7 +13,6 @@
 void recebe_notas (double *, int, int *);
 void conta_notas (int *, int, int *, int *);
 
-
 //Main
 int main() {
 
@@ -30,12 +29,9 @@ for(i = 0; i < MAX; i++){
 recebe_notas(NOTAS, MAX, APR);
 conta_notas(APR, MAX, &aprovados, &reprovados);
 
-//printf("Aprovados: %d\n", aprovados);
-//printf("Reprovados: %d\n", reprovados);
+printf("Aprovados: %d\n", aprovados);
+printf("Reprovados: %d\n", reprovados);
 
-for (j=0;j<MAX;j++){
-  printf("%d", APR[j]);
-}
   return 0;
 }
 
@@ -54,14 +50,16 @@ void recebe_notas (double *NOTAS, int Num, int *APR){
 }
 
 void conta_notas (int *APR, int Num, int *aprovados, int *reprovados){
-  int j = 0;
+  int j = 0, contaprovados = 0, contreprovados = 0;
 
   for(j = 0; j < Num; ++j){
-    if (APR[j] == 0){
-      *reprovados ++;
+    if (!(APR[j])){
+      contreprovados ++;
     }
-    else if(APR[j] == 1){
-      *aprovados ++;
+    else{
+      contaprovados ++;
     }
   }
+  *aprovados = contaprovados;
+  *reprovados = contreprovados;
 }
