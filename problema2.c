@@ -21,7 +21,7 @@ int i, j, APR[MAX];
 int *aprovados, *reprovados;
 double *percentAprovados, *percentReprovados;
 
-printf("Digite a nota de 10 alunos: \n");
+printf("Digite a nota de 4 alunos: \n");
 for(i = 0; i < MAX; i++){
   scanf("%lf", &NOTAS[i]);
   if(NOTAS[i] < 0){
